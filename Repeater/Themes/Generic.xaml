@@ -1,0 +1,28 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls1="using:Microsoft.UI.Xaml.Controls"
+    xmlns:repeater="using:Bug10.Repeater">
+
+
+    <Style TargetType="repeater:RepeaterView">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="repeater:RepeaterView">
+                    <controls1:RefreshContainer Name="RootRefreshContainer">
+                        <ScrollViewer Name="RootScrollViewer">
+                            <controls1:Repeater Name="ContentRepeater" ItemsSource="{TemplateBinding ItemsSource}"
+                                                Layout="{TemplateBinding Layout}"
+                                                ViewGenerator="{TemplateBinding ViewGenerator}" />
+                        </ScrollViewer>
+                    </controls1:RefreshContainer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Layout">
+            <Setter.Value>
+                <controls1:StackLayout />
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
