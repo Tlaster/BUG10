@@ -5,21 +5,20 @@
     xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
     xmlns:card="using:Bug10.Card">
 
-    <Style TargetType="card:CardView" >
+    <Style TargetType="card:CardView">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="card:CardView">
                     <Grid x:Name="RootGrid" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <controls:DropShadowPanel x:Name="ShadowPanel" HorizontalContentAlignment="Stretch"
                                                   VerticalContentAlignment="Stretch"
-                                                  BlurRadius="30"
                                                   ShadowOpacity="0.6"
-                                                  OffsetY="3"
-                                                  extensions:VisualExtensions.Opacity="0"
+                                                  BlurRadius="30"
+                                                  Opacity="0"
                                                   Visibility="Collapsed">
                             <Border />
                         </controls:DropShadowPanel>
-                        <ContentPresenter Content="{TemplateBinding Content}"></ContentPresenter>
+                        <ContentPresenter Content="{TemplateBinding Content}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

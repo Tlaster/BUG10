@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="Sample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:card="using:Bug10.Card"
+    xmlns:icon="using:Bug10.Icon"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock Text="IconView:"/>
+        <ComboBox ItemsSource="{x:Bind IconList}" SelectedItem="{x:Bind SelectedIcon, Mode=TwoWay}"/>
+        <icon:IconView Icon="{x:Bind SelectedIcon, Mode=OneWay}"/>
+        <TextBlock Text="CardView:"/>
+        <card:CardView>
+            <Rectangle Width="100" Height="100" Fill="Blue"></Rectangle>
+        </card:CardView>
+    </StackPanel>
+</Page>
