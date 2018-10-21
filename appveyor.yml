@@ -1,6 +1,8 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 configuration: Release
+before_build:
+- ps: nuget restore
 build:
   project: Bug10.sln
   parallel: true
