@@ -1,0 +1,12 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+configuration: Release
+build:
+  project: Bug10.sln
+  parallel: true
+  verbosity: minimal
+before_package:
+- ps: .\Pack.ps1
+artifacts:
+- path: '*.nupkg'
+  name: nuget

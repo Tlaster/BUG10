@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Bug10.Card</id>
+    <version>1.0.0</version>
+    <title>Bug10.Card</title>
+    <authors>Tlaster</authors>
+    <owners>Tlaster</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/Tlaster/BUG10/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/Tlaster/BUG10</projectUrl>
+    <description>Better frame navigation for UWP</description>
+  </metadata>
+  <files>
+    <file src="bin\Release\Themes\Generic.xbf" target="lib\uap10.0\Bug10.Card\Themes\Generic.xbf" />
+    <file src="bin\Release\Bug10.Card.xr.xml" target="lib\uap10.0\Bug10.Card.xr.xml" />
+    <file src="bin\Release\Bug10.Card.pri" target="lib\uap10.0\Bug10.Card.pri" />
+    <file src="bin\Release\Bug10.Card.dll" target="lib\uap10.0\Bug10.Card.dll" />
+    <file src="bin\Release\Bug10.Card.pdb" target="lib\uap10.0\Bug10.Card.pdb" />
+  </files>
+</package>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Bug10.Repeater</id>
+    <version>1.0.0</version>
+    <title>Bug10.Repeater</title>
+    <authors>Tlaster</authors>
+    <owners>Tlaster</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/Tlaster/BUG10/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/Tlaster/BUG10</projectUrl>
+    <description>Repeater</description>
+    <dependencies>
+      <dependency id="Microsoft.UI.Xaml" version="[2.0.180916002-prerelease]" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\Themes\Generic.xbf" target="lib\uap10.0\Bug10.Repeater\Themes\Generic.xbf" />
+    <file src="bin\Release\Bug10.Repeater.xr.xml" target="lib\uap10.0\Bug10.Repeater.xr.xml" />
+    <file src="bin\Release\Bug10.Repeater.pri" target="lib\uap10.0\Bug10.Repeater.pri" />
+    <file src="bin\Release\Bug10.Repeater.pdb" target="lib\uap10.0\Bug10.Repeater.pdb" />
+    <file src="bin\Release\Bug10.Repeater.dll" target="lib\uap10.0\Bug10.Repeater.dll" />
+  </files>
+</package>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Bug10.Icon</id>
+    <version>1.0.0</version>
+    <title>Bug10.Icon</title>
+    <authors>Tlaster</authors>
+    <owners>Tlaster</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/Tlaster/BUG10/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/Tlaster/BUG10</projectUrl>
+    <description>Better frame navigation for UWP</description>
+  </metadata>
+  <files>
+    <file src="bin\Release\Bug10.Icon.pri" target="lib\uap10.0\Bug10.Icon.pri" />
+    <file src="bin\Release\Bug10.Icon.dll" target="lib\uap10.0\Bug10.Icon.dll" />
+    <file src="bin\Release\Bug10.Icon.pdb" target="lib\uap10.0\Bug10.Icon.pdb" />
+  </files>
+</package>
