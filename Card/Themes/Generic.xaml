@@ -9,7 +9,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="card:CardView">
-                    <Grid x:Name="RootGrid" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid x:Name="RootGrid" HorizontalAlignment="Center" Padding="{TemplateBinding Padding}" VerticalAlignment="Center">
                         <controls:DropShadowPanel x:Name="ShadowPanel" HorizontalContentAlignment="Stretch"
                                                   VerticalContentAlignment="Stretch"
                                                   ShadowOpacity="0.6"

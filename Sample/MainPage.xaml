@@ -7,10 +7,26 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:card="using:Bug10.Card"
     xmlns:icon="using:Bug10.Icon"
+    xmlns:book="using:Book"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel Orientation="Vertical">
+
+    <Grid>
+        <Slider Value="{Binding ElementName=BookView, Path=SelectedIndex, Mode=TwoWay}" Maximum="{Binding ElementName=BookView, Path=ItemsSource.Length}"/>
+        <book:BookView Name="BookView" ItemsSource="{x:Bind Strings}">
+            <book:BookView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Background="Red" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock>hahaha</TextBlock>
+                        <TextBlock Text="{Binding}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </book:BookView.ItemTemplate>
+        </book:BookView>
+    </Grid>
+
+    <!--<StackPanel Orientation="Vertical">
         <TextBlock Text="IconView:"/>
         <ComboBox ItemsSource="{x:Bind IconList}" SelectedItem="{x:Bind SelectedIcon, Mode=TwoWay}"/>
         <icon:IconView Icon="{x:Bind SelectedIcon, Mode=OneWay}"/>
@@ -18,5 +34,5 @@
         <card:CardView>
             <Rectangle Width="100" Height="100" Fill="Blue"></Rectangle>
         </card:CardView>
-    </StackPanel>
+    </StackPanel>-->
 </Page>

@@ -44,6 +44,7 @@ namespace Sample
 
         public List<Icons> IconList { get; } = typeof(Icons).GetFields().Where(it => it.IsStatic).Select(it => (Icons) it.GetValue(null)).ToList();
 
+        public string[] Strings { get; set; } = Enumerable.Range(0, 100).Select(it => it.ToString()).ToArray();
 
 
         public MainPage()

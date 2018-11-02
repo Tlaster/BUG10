@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
@@ -17,7 +18,7 @@ namespace Bug10.Repeater
     {
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
             "ItemsSource", typeof(object), typeof(RepeaterView),
-            new PropertyMetadata(default(object), OnItemsSourceChanged));
+            new PropertyMetadata(default, OnItemsSourceChanged));
 
         public static readonly DependencyProperty LayoutProperty = DependencyProperty.Register(
             "Layout", typeof(VirtualizingLayoutBase), typeof(RepeaterView),
@@ -120,12 +121,27 @@ namespace Bug10.Repeater
                         await loading.LoadMoreItemsAsync(20);
                         def?.Complete();
                         _isLoading = false;
+                        TryLoadIfNotFill();
                     });
             }
             else
             {
                 def?.Complete();
             }
+        }
+
+        private void TryLoadIfNotFill()
+        {
+            if (_isLoading)
+            {
+                return;
+            }
+
+            if (_rootScrollViewer.ScrollableHeight > ActualHeight)
+            {
+                return;
+            }
+            LoadItems();
         }
 
         private void RootScrollViewerOnViewChanging(object sender, ScrollViewerViewChangingEventArgs e)
