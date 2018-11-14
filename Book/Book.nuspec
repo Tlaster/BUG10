@@ -13,7 +13,7 @@
   </metadata>
   <files>
     <file src="bin\Release\Themes\Generic.xbf" target="lib\uap10.0\Bug10.Book\Themes\Generic.xbf" />
-    <file src="bin\Release\Bug10.Book.xr.xml" target="lib\uap10.0\Bug10.Book.xr.xml" />
+    <file src="bin\Release\Bug10.Book.xr.xml" target="lib\uap10.0\Bug10.Book\Bug10.Book.xr.xml" />
     <file src="bin\Release\Bug10.Book.pri" target="lib\uap10.0\Bug10.Book.pri" />
     <file src="bin\Release\Bug10.Book.dll" target="lib\uap10.0\Bug10.Book.dll" />
     <file src="bin\Release\Bug10.Book.pdb" target="lib\uap10.0\Bug10.Book.pdb" />

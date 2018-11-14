@@ -13,7 +13,7 @@
   </metadata>
   <files>
     <file src="bin\Release\Themes\Generic.xbf" target="lib\uap10.0\Bug10.Card\Themes\Generic.xbf" />
-    <file src="bin\Release\Bug10.Card.xr.xml" target="lib\uap10.0\Bug10.Card.xr.xml" />
+    <file src="bin\Release\Bug10.Card.xr.xml" target="lib\uap10.0\Bug10.Card\Bug10.Card.xr.xml" />
     <file src="bin\Release\Bug10.Card.pri" target="lib\uap10.0\Bug10.Card.pri" />
     <file src="bin\Release\Bug10.Card.dll" target="lib\uap10.0\Bug10.Card.dll" />
     <file src="bin\Release\Bug10.Card.pdb" target="lib\uap10.0\Bug10.Card.pdb" />

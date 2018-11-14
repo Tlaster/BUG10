@@ -16,7 +16,7 @@
   </metadata>
   <files>
     <file src="bin\Release\Themes\Generic.xbf" target="lib\uap10.0\Bug10.Repeater\Themes\Generic.xbf" />
-    <file src="bin\Release\Bug10.Repeater.xr.xml" target="lib\uap10.0\Bug10.Repeater.xr.xml" />
+    <file src="bin\Release\Bug10.Repeater.xr.xml" target="lib\uap10.0\Bug10.Repeater\Bug10.Repeater.xr.xml" />
     <file src="bin\Release\Bug10.Repeater.pri" target="lib\uap10.0\Bug10.Repeater.pri" />
     <file src="bin\Release\Bug10.Repeater.pdb" target="lib\uap10.0\Bug10.Repeater.pdb" />
     <file src="bin\Release\Bug10.Repeater.dll" target="lib\uap10.0\Bug10.Repeater.dll" />
