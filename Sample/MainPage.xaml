@@ -8,22 +8,23 @@
     xmlns:card="using:Bug10.Card"
     xmlns:icon="using:Bug10.Icon"
     xmlns:book="using:Book"
+    xmlns:book1="using:Bug10.Book"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 
     <Grid>
         <Slider Value="{Binding ElementName=BookView, Path=SelectedIndex, Mode=TwoWay}" Maximum="{Binding ElementName=BookView, Path=ItemsSource.Length}"/>
-        <book:BookView Name="BookView" ItemsSource="{x:Bind Strings}">
-            <book:BookView.ItemTemplate>
+        <book1:BookView Name="BookView" ItemsSource="{x:Bind Strings}">
+            <book1:BookView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Background="Red" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock>hahaha</TextBlock>
                         <TextBlock Text="{Binding}"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
-            </book:BookView.ItemTemplate>
-        </book:BookView>
+            </book1:BookView.ItemTemplate>
+        </book1:BookView>
     </Grid>
 
     <!--<StackPanel Orientation="Vertical">

@@ -1,15 +1,16 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Book">
-    <Style TargetType="local:BookView">
+    xmlns:local="using:Book"
+    xmlns:book="using:Bug10.Book">
+    <Style TargetType="book:BookView">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="local:BookView">
+                <ControlTemplate TargetType="book:BookView">
                     <Grid Name="RootGrid">
                         <Grid.Resources>
-                            <local:PageTemplateSelector x:Key="PageTemplateSelector" />
-                            <local:IndexConverter x:Key="IndexConverter"/>
+                            <book:PageTemplateSelector x:Key="PageTemplateSelector" />
+                            <book:IndexConverter x:Key="IndexConverter"/>
                         </Grid.Resources>
                         <FlipView Name="ContentFlipView" SelectedIndex="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectedIndex, Converter={StaticResource IndexConverter}, Mode=TwoWay}">
                             <FlipView.ItemTemplate>

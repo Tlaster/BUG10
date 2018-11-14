@@ -7,8 +7,8 @@
     <ProjectGuid>{650B01BE-B493-4292-95AF-B65AAF2CD910}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Book</RootNamespace>
-    <AssemblyName>Book</AssemblyName>
+    <RootNamespace>Bug10.Book</RootNamespace>
+    <AssemblyName>Bug10.Book</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
