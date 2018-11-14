@@ -11,7 +11,7 @@
     <projectUrl>https://github.com/Tlaster/BUG10</projectUrl>
     <description>Repeater</description>
     <dependencies>
-      <dependency id="Microsoft.UI.Xaml" version="[2.0.180916002-prerelease]" />
+      <dependency id="Microsoft.UI.Xaml" version="[2.1.181025003-prerelease]" />
     </dependencies>
   </metadata>
   <files>
