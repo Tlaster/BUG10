@@ -9,6 +9,7 @@
     xmlns:icon="using:Bug10.Icon"
     xmlns:book="using:Book"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:book1="using:Bug10.Book"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -18,13 +19,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <book:BookView Name="BookView" ItemsSource="{x:Bind Strings}">
-            <book:BookView.ItemTemplate>
+        <book1:BookView Name="BookView" ItemsSource="{x:Bind Strings}">
+            <book1:BookView.ItemTemplate>
                 <DataTemplate>
                     <controls:ImageEx IsCacheEnabled="True" Source="{Binding}"/>
                 </DataTemplate>
-            </book:BookView.ItemTemplate>
-        </book:BookView>
+            </book1:BookView.ItemTemplate>
+        </book1:BookView>
         <Slider Grid.Row="1" Value="{Binding ElementName=BookView, Path=SelectedIndex, Mode=TwoWay}" Maximum="{Binding ElementName=BookView, Path=ItemsSource.Length}"/>
     </Grid>
 
