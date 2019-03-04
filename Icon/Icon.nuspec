@@ -9,7 +9,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>https://github.com/Tlaster/BUG10/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/Tlaster/BUG10</projectUrl>
-    <description>Better frame navigation for UWP</description>
+    <description>More icons for uwp</description>
   </metadata>
   <files>
     <file src="bin\Release\Bug10.Icon.pri" target="lib\uap10.0\Bug10.Icon.pri" />

@@ -10,13 +10,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="repeater:RepeaterView">
                     <controls:RefreshContainer Name="RootRefreshContainer">
-                        <controls:ElementTracker>
                             <ScrollViewer Name="RootScrollViewer">
-                                <controls:Repeater Name="ContentRepeater" ItemsSource="{TemplateBinding ItemsSource}"
+                                <controls:ItemsRepeater Name="ContentRepeater" ItemsSource="{TemplateBinding ItemsSource}"
                                                    Layout="{TemplateBinding Layout}"
-                                                   ViewGenerator="{TemplateBinding ViewGenerator}" />
+                                                   ItemTemplate="{TemplateBinding ItemTemplate}" />
                             </ScrollViewer>
-                        </controls:ElementTracker>
                     </controls:RefreshContainer>
                 </ControlTemplate>
             </Setter.Value>
