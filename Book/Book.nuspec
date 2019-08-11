@@ -9,7 +9,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>https://github.com/Tlaster/BUG10/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/Tlaster/BUG10</projectUrl>
-    <description>Better frame navigation for UWP</description>
+    <description>BookView for UWP</description>
   </metadata>
   <files>
     <file src="bin\Release\Themes\Generic.xbf" target="lib\uap10.0\Bug10.Book\Themes\Generic.xbf" />

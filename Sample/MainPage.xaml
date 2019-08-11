@@ -8,23 +8,25 @@
     xmlns:card="using:Bug10.Card"
     xmlns:icon="using:Bug10.Icon"
     xmlns:book="using:Book"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:book1="using:Bug10.Book"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 
     <Grid>
-        <Slider Value="{Binding ElementName=BookView, Path=SelectedIndex, Mode=TwoWay}" Maximum="{Binding ElementName=BookView, Path=ItemsSource.Length}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         <book1:BookView Name="BookView" ItemsSource="{x:Bind Strings}">
             <book1:BookView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Background="Red" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock>hahaha</TextBlock>
-                        <TextBlock Text="{Binding}"></TextBlock>
-                    </StackPanel>
+                    <controls:ImageEx IsCacheEnabled="True" Source="{Binding}"/>
                 </DataTemplate>
             </book1:BookView.ItemTemplate>
         </book1:BookView>
+        <Slider Grid.Row="1" Value="{Binding ElementName=BookView, Path=SelectedIndex, Mode=TwoWay}" Maximum="{Binding ElementName=BookView, Path=ItemsSource.Length}"/>
     </Grid>
 
     <!--<StackPanel Orientation="Vertical">

@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -14,9 +17,19 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Toolkit.Uwp.UI;
 
 namespace Sample
 {
+    class Http : HttpClientHandler
+    {
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            request.Headers.Referrer = new Uri("https://manhua.dmzj.com/kuijunshigexiangsidenvhaizi/82333.shtml");
+            return base.SendAsync(request, cancellationToken);
+        }
+    }
+
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
@@ -58,6 +71,8 @@ namespace Sample
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
+
+            ImageCache.Instance.InitializeAsync(httpMessageHandler: new Http());
 
             if (e.PrelaunchActivated == false)
             {
