@@ -34,8 +34,13 @@ namespace Bug10.Paging
 
             Loaded += delegate { Window.Current.VisibilityChanged += OnVisibilityChanged; };
             Unloaded += delegate { Window.Current.VisibilityChanged -= OnVisibilityChanged; };
-
+            _activityStackManager.BackStackChanged += ActivityStackManagerOnBackStackChanged;
             DefaultStyleKey = typeof(ActivityContainer);
+        }
+
+        private void ActivityStackManagerOnBackStackChanged()
+        {
+            BackStackChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public bool DisableCache { get; set; }
@@ -114,6 +119,7 @@ namespace Bug10.Paging
 
         public event EventHandler<EventArgs> Navigated;
         public event EventHandler<EventArgs> Navigating;
+        public event EventHandler BackStackChanged;
 
         public Task<bool> GoHome()
         {
@@ -156,11 +162,16 @@ namespace Bug10.Paging
         {
             Navigate(homeActivityType, parameter);
         }
-
+        
         public Task<bool> Navigate(Type activityType, object parameter)
         {
             var newActivity = new ActivityModel(activityType, parameter);
             return NavigateWithMode(newActivity, NavigationMode.New);
+        }
+
+        public Task<bool> Navigate<T>(object parameter = null) where T: Activity
+        {
+            return Navigate(typeof(T), parameter);
         }
 
         private static void OnSourceActivityTypeChanged(DependencyObject dependencyObject,
@@ -371,6 +382,21 @@ namespace Bug10.Paging
                 CurrentActivity?.OnResume();
             else
                 CurrentActivity?.OnPause();
+        }
+
+        internal void FinishActivity(Activity activity)
+        {
+            if (CurrentActivity == activity)
+            {
+                if (CanGoBack)
+                {
+                    GoBack();
+                }
+            }
+            else
+            {
+                _activityStackManager.RemoveActivity(activity);
+            }
         }
     }
 }

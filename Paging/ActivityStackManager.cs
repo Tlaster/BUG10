@@ -18,9 +18,27 @@ namespace Bug10.Paging
 
         public int BackStackDepth => CurrentIndex + 1;
 
+        public event Action BackStackChanged;
+
         public ActivityModel GetActivityAt(int index)
         {
             return _activities[index];
+        }
+
+        public bool RemoveActivity(Activity activity)
+        {
+            if (activity == CurrentActivity.Activity)
+            {
+                throw new ArgumentException("The current activity cannot be removed from the stack. ");
+            }
+
+            var index = _activities.FindIndex(it => it.Activity == activity);
+            if (index == -1)
+            {
+                throw new ArgumentException("Can not find activity from the back stack");
+            }
+
+            return RemoveActivityAt(index);
         }
 
         public bool RemoveActivityAt(int index)
@@ -30,7 +48,7 @@ namespace Bug10.Paging
 
             _activities.RemoveAt(index);
             if (index < CurrentIndex) CurrentIndex--;
-
+            BackStackChanged?.Invoke();
             return true;
         }
 
@@ -49,8 +67,8 @@ namespace Bug10.Paging
         public void ChangeCurrentActivity(ActivityModel newActivity, int nextIndex)
         {
             if (_activities.Count <= nextIndex) _activities.Add(newActivity);
-
             CurrentIndex = nextIndex;
+            BackStackChanged?.Invoke();
         }
 
         public bool CanGoBackTo(int newIndex)

@@ -105,10 +105,7 @@ namespace Bug10.Paging
 
         protected void Finish()
         {
-            if (Container.CanGoBack)
-            {
-                Container.GoBack();
-            }
+            Container.FinishActivity(this);
         }
 
         protected void StartActivity(Type type, object parameter = null)
